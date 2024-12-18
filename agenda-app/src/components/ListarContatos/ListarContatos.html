@@ -1,0 +1,53 @@
+<div class="contacts-page">
+    <div class="content-container">
+      <div class="contacts-container">
+        <h1>Lista de Contatos</h1>
+
+        <!-- Mensagem de ausência de contatos -->
+        <div v-if="contacts.length === 0" class="no-contacts">
+          <p>Não há contatos cadastrados.</p>
+        </div>
+
+        <!-- Tabela de contatos -->
+        <table v-else class="contacts-table">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Email</th>
+              <th>Telefone</th>
+              <th>Ativo</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="contact in contacts" :key="contact.id">
+              <td>{{ contact.name }}</td>
+              <td>{{ contact.email }}</td>
+              <td>{{ contact.phone }}</td>
+              <td>{{ contact.isActive ? "Sim" : "Não" }}</td>
+              <td>
+                <button @click="editContact(contact)">Editar</button>
+                <button @click="deleteContact(contact.id)">Deletar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Botão para criar novo contato -->
+        <button @click="goToCreateContact" class="create-contact-btn">
+          Novo Contato
+        </button>
+
+        <!-- Paginação -->
+        <div v-if="totalPages > 1" class="pagination">
+          <button @click="goToPage(currentPage - 1)" :disabled="currentPage === 1">Anterior</button>
+          <span>Página {{ currentPage }} de {{ totalPages }}</span>
+          <button @click="goToPage(currentPage + 1)" :disabled="currentPage === totalPages">Próxima</button>
+        </div>
+
+        <!-- Mensagem de erro ou sucesso -->
+        <div v-if="errorMessage" class="message error">{{ errorMessage }}</div>
+        <div v-if="successMessage" class="message success">{{ successMessage }}</div>
+      </div>
+    </div>
+  </div>

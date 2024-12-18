@@ -1,0 +1,82 @@
+.contacts-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f4f7fb;
+}
+
+.content-container {
+  display: flex;
+  width: 100%;
+  max-width: 900px;
+  background: #fff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.contacts-container {
+  padding: 40px;
+  width: 100%;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.no-contacts {
+  text-align: center;
+  font-size: 18px;
+  color: #777;
+}
+
+.contacts-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.contacts-table th,
+.contacts-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.contacts-table th {
+  background-color: #f2f2f2;
+}
+
+.contacts-table td button {
+  margin: 5px;
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.contacts-table td button:hover {
+  background-color: #0056b3;
+}
+
+.create-contact-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.create-contact-btn:hover {
+  background-color: #0056b3;
+}
